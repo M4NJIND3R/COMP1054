@@ -2,43 +2,117 @@
 
 /* STEP 1: Named Selector
 ------------------------------------------------------- */
+h2 {
+    color: chocolate;
+}
 
 
 /* STEP 2: ID Selector
 ------------------------------------------------------- */
+#specialHeading {
+    color: yellowgreen;
+    font-weight: 900;
+}
 
 
 /* STEP 3: Class Selector
 ------------------------------------------------------- */
+.project {
+    border: pink 3px dashed;
+    margin-top: 10px;
+    padding: 10px 10px 10px 5px;
+    background-color: #050505;
+}
 
 
 /* STEP 4: Contextual/Descendent Selector
 ------------------------------------------------------- */
+section p{
+    color: aquamarine;
+}
 
+.about p a{
+    /* background-color: orange; */
+    padding: 2px;
+}
 
 /* STEP 5: Grouped Selector
 ------------------------------------------------------- */
+h1, h2, h3 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 100;
+}
 
 
 /* STEP 6: Pseudo-Class Selector
 ------------------------------------------------------- */
+a:link{
+    text-decoration: none;
+    color: brown;
+    border: 2px brown;
+}
+
+a:visited{
+    color: red;
+}
+
+a:focus {
+    background-color: blueviolet;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+a:active{
+    background-color: blueviolet;
+}
 
 
 /* STEP 7: Structural Pseudo-Class Selector
 ------------------------------------------------------- */
+li:nth-child(3n-2){
+    background-color: palevioletred;
+}
+
 
 
 /* STEP 8: Pseudo-Element Selector
 ------------------------------------------------------- */
+p::first-line{
+    font-weight: 900;
+}
+
+p::first-letter{
+    font-size: 200%;
+}
 
 
 /* STEP 9: Combinator Selector
 ------------------------------------------------------- */
+h1 + p {
+    color: burlywood;
+}
+
 
 
 /* STEP 10: Attribute Selector
 ------------------------------------------------------- */
+*[lang="es"]{
+    background-color: red;
+    color: green;
+}
+
 
 
 /* STEP 11: Getting Crazy
 ------------------------------------------------------- */
+.project h2[lang="es"] + p {
+    /*  */
+}
+
+h2 ~ ul {
+    background-color: #8a8282;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
