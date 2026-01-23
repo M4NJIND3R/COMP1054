@@ -1,0 +1,62 @@
+body {
+    margin: 31px 67px 67px 67px;
+}
+
+header , main > h4{
+    font-family: "PT Sans Narrow", sans-serif;
+}
+
+header {
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+header > h1{
+    line-height: 1;
+    font-size: 2rem;
+    font-weight: 200;
+    letter-spacing: .2rem;
+    border: 2px black solid;
+    width: fit-content;
+    padding: 2px 5px;
+}
+
+header > h2{
+    font-size: 3.5rem;
+    letter-spacing: .3rem;
+    margin: 0px auto 0px auto;
+    width: fit-content;
+}
+
+header > p {
+    font-size: 1.57rem;
+    margin: 0;
+    text-align: justify;
+    font-weight: 600;
+}
+
+
+main {
+    font-family: 'Times New Roman', Times, serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    column-count: 3;
+    margin-top: 18px;
+}
+
+main p{
+    font-size: 0.8rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: justify;
+    hyphens: auto;
+    text-indent: 14px;
+}
+
+main p:first-child{
+    text-indent: 0px;
+}
+
+main > h4{
+    margin: 17px 0px;
+}
