@@ -30,9 +30,10 @@ header > h2{
 
 header > p {
     font-size: 1.57rem;
-    margin: 0;
+    margin: 0px auto 0px auto;
     text-align: justify;
     font-weight: 600;
+    width: fit-content;
 }
 
 
