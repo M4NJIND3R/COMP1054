@@ -1,0 +1,153 @@
+@charset "UTF-8";
+
+html{
+    font-size: 100%;
+    box-sizing: border-box;
+
+    background: linear-gradient(
+        135deg,
+        #14082c , 
+        #46209e , 
+        #a65a7e ,
+        #e9966f 100%,
+        #291a2b ,
+        #110618 
+    );
+}
+*,*::before,*::after{
+    box-sizing: inherit;
+}
+
+body {
+    display: grid;
+    grid-template-areas: 
+    "aside header"
+    "aside main"
+    "footer footer"
+    ;
+    grid-template-columns: 5fr 6fr ;
+    grid-template-rows: 240px auto 170px;
+    gap: 15px;
+
+    width: 75%;
+    margin: 50px auto;
+    padding: 50px;
+
+    border-radius: 25px;
+    background-color: #180b1fab  ;
+}
+
+h1, h2{
+    font-family: "Playfair", sans-serif;
+    margin: 0px;
+    text-transform: uppercase;
+    color: white;
+}
+
+p{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: .9rem;
+    line-height: 1.6;
+    margin: 0px;
+    color: white;
+}
+
+a{
+    color: #f9c801;
+}
+
+h1{
+    font-weight: 800;
+    font-size: 5rem;
+}
+
+header iframe{
+    display: block;
+}
+
+main > section{
+    margin: 15px auto;
+}
+
+main p{
+    line-height: 2;
+}
+
+aside section{
+    margin: 15px auto;
+}
+
+h2{
+    font-size: .85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+aside section:not(:last-child) p{
+    font-size: 1.2rem;
+}
+
+aside section:not(:last-child) p::before{
+    content: "— ";
+}
+aside section:not(:last-child) p::after{
+    content: " —";
+}
+
+aside section:not(:last-child) p::before,
+aside section:not(:last-child) p::after{
+    font-weight: 1000;
+    color: #f9c801;
+}
+
+aside section:last-child p{
+    margin: 15px auto;
+    text-align: justify;
+}
+
+img{
+    width: 100%;
+    border-radius: 25px;
+}
+p img{
+    width: 1.1rem;
+    margin-bottom: -3px;
+}
+
+header > div {
+    width: 60%;
+}
+
+header{
+    border-top-right-radius: 25px;
+    grid-area: header;
+}
+
+main{
+    grid-area: main;
+}
+
+aside{
+    border-top-left-radius: 25px;
+    grid-area: aside;
+}
+
+footer{
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    grid-area: footer;
+}
+
+footer h2{
+    margin: 5px auto;
+}
+
+header,
+main,
+aside,
+footer{
+    padding: 25px;
+    border: .1rem #f9c70136 dashed ;
+
+}
