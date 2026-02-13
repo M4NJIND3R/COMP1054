@@ -11,20 +11,33 @@
 		}
 		/* STEP 1: Basic shadow with x and y offset */
 		.basic {
-			
+			text-shadow: 2px 2px;
 		}
 		/* STEP 2: Basic shadow with offset plus color */
 		.basic-color {
+			text-shadow: 2px 2px #000;
 			
 		}
 		/* STEP 3: Text shadow with a blur radius */
 		.blur {
+			text-shadow: 2px 2px 2px #000;
 			
 		}
 		/* STEP 4: Multiple text shadows */
 		.multiple {
-		
+			text-shadow: 2px 2px black,
+			-2px -2px rgb(0, 0, 0),
+			0 5px hotpink,
+			5px 5px cyan;
 		}
+		.multiple:hover {
+			text-shadow: -2px -2px black,
+			2px 2px yellowgreen,
+			-0 -5px hotpink,
+			-5px -5px cyan;
+		}
+
+		
 	</style>
 </head>
 <body>

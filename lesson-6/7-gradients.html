@@ -30,59 +30,65 @@
 		.vertical-down {
 
 			/* default gradient, so you don't need to specify "to bottom" before the colors */
-
+			background: linear-gradient(silver, black);
 		}
 		.vertical-up {
-
+			background: linear-gradient(to top, silver, black);
+			
 		}
 		/* Horizontal */
 		.horizontal-rt {
-
+			background-image: linear-gradient(to right, silver, black);
+			
 		}
 		.horizontal-lt {
-
+			background: linear-gradient(to left, silver, black);
+			
 		}
 		/* Diagonal Angles */
 		.angle-corners {
-
+			background-image: linear-gradient(to bottom right, silver, black);
+			
 		}
 		/* Angles via Degrees */
 		.angle-deg {
+			background: linear-gradient(145deg, silver, black);
 
 		}
 
 		/* STEP 2: RADIAL GRADIENTS
 		------------------------------------------ */
 		.radial p {
-
 		}
 		.radial-center {
-
+			background: radial-gradient(yellow, green);			
 		}
 		.radial-top {
-
+			background: radial-gradient(at top right, yellow, green);			
 		}
 		.radial-size-1 {
-
+			background: radial-gradient(ellipse at bottom, yellow, green);			
 		}
 		.radial-size-2 {
-
+			background: radial-gradient(ellipse at top, yellow, green);			
 		}
 
 		/* STEP 3: LINEAR GRADIENTS WITH COLOR STOPS
 		------------------------------------------ */
 		.color-stops div {
 		}
-
+		
 		.color-stops p {
 		}
-
+		
 		.color-stops {
+			background: radial-gradient(at top right, red 20%, yellow);
 
 		}
 		/* STEP 4: Use a color gradient CSS generator - http://www.colorzilla.com/gradient-editor/ */
 		.gradient-generator {
-
+			/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#110618+0,46209e+24,a65a7e+65,e9966f+73,110618+85 */
+			background: linear-gradient(135deg,  #110618 0%,#46209e 24%,#a65a7e 65%,#e9966f 73%,#110618 85%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 		}
 	</style>
 </head>
