@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Besley:wght@400..900&family=Cutive+Mono&family=EB+Garamond:wght@400..800&display=swap');
+
+
+/* -----------------------------------------HEADER--------------------------------------- */
+
+html{
+  box-sizing: border-box;
+}
+*,*::after,*::after{
+  box-sizing: inherit;
+}
+
+html{
+  font-size: 100%;
+}
+
+#container {
+  width: 1000px;
+  margin: 0px auto;
+  padding: 35px;
+}
+
+
+header {
+  display: flex;
+  flex-direction: column-reverse;
+  
+  width: fit-content;
+  margin: 0px auto;
+}
+
+header h1{
+  font-family: "Besley", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 9.7rem;
+  
+  text-transform: lowercase;
+  
+  color: #f35925;
+  margin: 0px;
+}
+
+header h1 + p {
+  font-family: "Cutive Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.2rem;
+
+  margin: 0;
+  
+  text-transform: uppercase;
+}
+
+
+/* -----------------------------------------MAIN------------------------------------------ */
+
+main {
+  margin-top: 50px;
+  display: grid;
+  grid-template-areas:
+    "image rsec1"
+    "image rsec2"
+    "image rsec3"
+    "cover rsec3";
+  grid-template-columns: 500px 1fr;
+  gap: 1.5rem;
+}
+
+main section:nth-child(1){
+  grid-area: rsec1;
+}
+
+main section:nth-child(2){
+  grid-area: rsec2;
+}
+
+main section:nth-child(3){
+  grid-area: rsec3;
+}
+
+main aside:first-child{
+  grid-area: image;
+}
+
+main aside:last-child{
+  grid-area: cover;
+}
+
+
+/* -------------------------------------------------Sections----------------------------------------- */
+
+main > section {
+  border-top-width: 20px;
+  border-top-style: solid;
+  height: fit-content;
+}
+
+main section:nth-child(1){
+  border-top-color: #76aa31;
+}
+
+main section:nth-child(2){
+  border-top-color: #e42e78;
+}
+
+main section:nth-child(3){
+  border-top-color: #0796b4;
+}
+
+main section:nth-child(1) h3{
+  color: #76aa31;
+}
+
+main section:nth-child(2) h3{
+  color: #e42e78;
+}
+
+main section:nth-child(3) h3{
+  color: #0796b4;
+}
+
+
+main section h2 {
+  font-size: 4rem;
+  
+  text-transform: lowercase;
+  
+  margin: 0px;
+  padding: 0px;
+}
+
+main section h3 {
+  text-transform: uppercase;
+}
+
+main section h3::after{
+  content: " ";
+}
+
+main section li{
+  margin: 5px 0px;
+}
+
+main section h3, main section p{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.03rem;
+
+  display: inline;
+  line-height: 1;
+  padding: 0px;
+  hyphens: auto;
+}
+
+abbr {
+  font-weight: bold;
+}
+
+
+
+/* ------------------------------------------------Cover----------------------------------------- */
+
+main aside:last-child{
+  margin: 0px 0px 20px 40px;
+  padding: 10px;
+  border: #e2b37e solid;
+  
+  box-shadow:  5px 5px 10px -5px rgb(158, 152, 152);
+  
+  height: fit-content;
+
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+
+main aside:last-child h2{
+  font-family: "EB Garamond", serif;
+  font-weight: 400;
+  font-size: 3rem;
+
+  margin: 0;
+  padding: 0;
+}
+
+aside:last-child h2 + p{
+  margin: 0;
+}
+
+aside:last-child h2 + p em{
+  text-transform: uppercase;
+  font-style: normal;
+}
+
+
+/* -----------------------------------------Image and side note----------------------------------------- */
+
+
+figure{
+  display: flex;
+  flex-direction: column-reverse;
+  position: absolute;
+  margin: 0;
+}
+
+figcaption{
+  position: absolute;
+  z-index: 99;
+}
+
+
+aside img{
+  width: 500px;
+}
+
+aside img + figcaption p{
+  position: relative;
+}
+
+aside img + figcaption p:first-child{
+  font-family: sans-serif;
+  text-shadow: rgb(114, 112, 112) 0px 0px 2px;
+  color: white;
+
+  width: 140px;
+  left: 90px;
+}
+
+aside img + figcaption p:first-child > em{
+  font-style: normal;
+  font-size: 7rem;
+  line-height: 1;
+  display: block;
+}
+
+aside img + figcaption p:nth-child(2){
+  top: 320px;
+  left: -40px;
+  width: fit-content;
+
+  font-family: monospace;
+
+  transform: rotate(-90deg);
+  text-transform: uppercase;
+} 
+
+
+/* ------------------------------------------------Footer----------------------------------------- */
+
+footer {
+  font-family: "Besley", serif;
+  font-weight: 400;
+  font-style: normal;
+
+  text-transform: uppercase;
+}
+
+footer p {
+  width: fit-content;
+  margin: 0 0 0 auto;
+}
+
+footer em{
+  font-size: 1.5rem;
+  color: #f75f28;
+}
