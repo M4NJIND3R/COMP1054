@@ -38,11 +38,11 @@
 				position: relative;
 				right: 50%;
 				margin-left: 0.25em;
-				background:#ddd;
+				background-color: rgb( 0 0 0 / 0.75);
 			}
 			header nav a {
 				display: block;
-				padding: 0.75em;
+				padding: 0.5em;
 				color: #fff;
 				text-decoration: none;
 			}
@@ -52,7 +52,19 @@
 			}
 
 			/* STEP 1a: Persistent navigation - manually add the class="floater" to the HEADER NAV and build out a fixed horizontal navigation bar */
-			
+			header nav.floater {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				background-color: rgb( 0 0 0 / 0.75);
+				transition-property: background-color;
+				transition-duration: 500ms;
+				z-index: 2;
+			}
+			header .floater li{
+				background-color: transparent;
+			}
 			/* STEP 1b: Remove the class="floater" from the HTML */
 
 			main {
@@ -84,7 +96,29 @@
 			}
 
 			/* STEP 7a: Build out the styles for the pullquote, adding the class="pullquote2" to the SPAN element in the HTML to see how the styles look */
-
+			.pullquote2{
+				display: block;
+				float: right;
+				padding-left: 20px;
+				margin: 0 1rem .5rem 1rem;
+				width: 35%;
+				font-size: 1.2rem;
+				font-weight: bold;
+				line-height: 1.5;
+				text-align: right;
+				color: #ccc;
+				border-left: 3px solid #ccc;
+			}
+			.pullquote2::before {
+				content: "\201C";
+				display: block;
+				font-size: 120px;
+				float: left;
+				position: relative;
+				top: -3rem;
+				color: #ccc;
+				z-index: 1;
+			}
 			/* STEP 7b: Add leading quotation marks and style them */
 
 			/* STEP 7c: Remove the class"pullquote2" from the HTML */
@@ -110,8 +144,18 @@
 				color: black;
 			}
 			/* STEP 3a: Build out the sticky footer 'Back to top' button styles */
-			
+			footer a.top {
+				position: fixed;
+				bottom: 1.5rem;
+				right: 1.5rem;
+				z-index: 99;
+				background-color: rgb(0 0 0 / .75);
+				border-radius: 30px;
+				padding: 10px;
 				/* STEP 3b: Now hide the button entirely, and we will make it visible later with JavaScript */
+				visibility: hidden;
+				transition: background-color 500ms;
+			}
 			
 
 		</style>
@@ -135,75 +179,95 @@
 					<h2>Desiderata</h2>
 
 					<p>Go placidly amid the noise and haste, and remember what peace there may be in silence. As far as possible without surrender be on good terms with all persons. Speak your truth quietly and clearly; and listen to others, even the dull and the ignorant; they too have their story.</p>
-
+	
 					<p>Avoid loud and aggressive persons, they are vexations to the spirit. If you compare yourself with others, you may become vain and bitter; for always there will be greater and lesser persons than yourself. Enjoy your achievements as well as your plans.</p>
 
 					<p><span class="pullquote">Keep interested in your own career, however humble; it is a real possession in the changing fortunes of time.</span> Exercise caution in your business affairs; for the world is full of trickery. But let this not blind you to what virtue there is; many persons strive for high ideals; and everywhere life is full of heroism.</p>
 
 					<p>Be yourself. Especially, do not feign affection. Neither be cynical about love; for in the face of all aridity and disenchantment it is as perennial as the grass.</p>
 
-					<p>Take kindly the counsel of the years, gracefully surrendering the things of youth. Nurture strength of spirit to shield you in sudden misfortune. But do not distress yourself with dark imaginings. Many fears are born of fatigue and loneliness. Beyond a wholesome discipline, be gentle with yourself.</p>
+					<p><span>Take kindly the counsel of the years, gracefully surrendering the things of youth.</span> Nurture strength of spirit to shield you in sudden misfortune. But do not distress yourself with dark imaginings. Many fears are born of fatigue and loneliness. Beyond a wholesome discipline, be gentle with yourself.</p>
 
-					<p>You are a child of the universe, no less than the trees and the stars; you have a right to be here. And whether or not it is clear to you, no doubt the universe is unfolding as it should.</p>
+					<p><span class="pullquote">You are a child of the universe, no less than the trees and the stars; you have a right to be here.</span> And whether or not it is clear to you, no doubt the universe is unfolding as it should.</p>
 
 					<p>Therefore be at peace with God, whatever you conceive Him to be, and whatever your labors and aspirations, in the noisy confusion of life keep peace with your soul.</p>
 
 					<p>With all its sham, drudgery, and broken dreams, it is still a beautiful world. Be cheerful. Strive to be happy.</p>
 
 					<p><cite>&ndash;Max Ehrmann</cite></p>
+				</blockquote>
 			</main>
 			<footer>
 				<h3>© Sticky Footer Button Inc.</h3>
 				<!-- STEP 6a: Build a simple 'back to top' anchor -->
-				<p><a href="#" title="Back to top" class="top"><img src="images/arrows.svg" width="25" height="25" /></a></p>
+				<p><a href="#" title="Back to top" class="top"><img src="images/arrows.svg" alt="Back to top arrow" width="25" height="25" /></a></p>
 				<p><small>Arrow icon made by <a href="http://www.flaticon.com/authors/dave-gandy" title="Dave Gandy">Dave Gandy</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></small></p>
 			</footer>
 		</div><!-- end #container -->
 		<script>
 		// STEP 2: Build out script to control visibility of persistent navigation based on the scrolling position
 		// STEP 2a: Grab the #floatingbar as a var
-		
+		const nav = document.querySelector("#floatingbar");
 		// STEP 2b: Determine how far down the top of the #floatingbar is from the top of the viewport and capture it with a variable called navTop
-		
+		let navTop = nav.offsetTop;
 		// STEP 4a: Get the 'Back to top' button from the DOM with a const topButton
-		
+		const backToTop = document.querySelector("a.top");
 		// STEP 8a: Assign any and all elements with the class="pullquote" to the const pullQuote
-		
+		const pullQuote = document.querySelectorAll("span.pullquote")
 		// STEP 2c: Build an event listener for the scroll event (https://developer.mozilla.org/en-US/docs/Web/Events/scroll)
-		
+		window.addEventListener("scroll", function(event) {
+
 			// STEP 2d: Check if the scroll position is further down than the top of the navbar...
-			
+			if (window.pageYOffset > navTop){
+				
 				// STEP 2e: Automatically add the class="floater" to enable the persistent navigation styles we built out in STEP 1
+				nav.classList.add("floater")
 				
 				// STEP 4b: Set the sticky footer 'Back to top' button to display 'block' as the user has scrolled down the page somewhat
+				backToTop.style.visibility = "visible"
 				
-			
+			} else {
 				// STEP 2f: The user is pretty close to the top of the page, so remove the class="floater" and display the regular tab-based navigation
+				nav.classList.remove("floater");
+				backToTop.style.visibility = "hidden"
 				
 				// STEP 4c: The user doesn't need the 'Back to top' button - they are at the top of the page, so set it to display 'none'
-					
-		
+			}
+		});
 
 			// STEP 6a: Attach event listener to 'Back to top' button that calls the scrollToTop function built in STEP 5
-			
+			backToTop.addEventListener("click", function(event){
 				// STEP 6b: Prevent the default action of the anchor
+				event.preventDefault();
+				scrollToTop();
+			});
 			
 
 			// STEP 5a: Build out Scroll-To-Top function
-			
+			function scrollToTop(){
 				// STEP 5b: Use the scrollBy() method to scroll the browser back up to the top of the page (https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollBy)
-						
+				window.scroll({
+					top: 0,
+					left: 0,
+					behavior: 'smooth'
+				});
+			}
 
 			// STEP 8b: Write a forEach loop to duplicate the pullquote text and insert it into the page
-			
+			pullQuote.forEach((element) => {
+
 				// STEP 8c: Get the parent element
-				
+				const parentElem = element.parentNode;
 				// STEP 8d: Clone the element (https://developer.mozilla.org/en-US/docs/Web/API/Node/cloneNode)
-				
+				let clone = element.cloneNode(true);
 				// STEP 8e: Add a special class to the cloned SPAN element
-				
+				clone.classList.add("pullquote2");
+				clone.classList.remove("pullquote");
+
+				console.log(clone);
 				// STEP 8f: Insert cloned element into the DOM
-				
+				parentElem.prepend(clone);
+			});
 			
 			// STEP 9a: Move this entire JavaScript into an external file and put it into the /js folder
 			/* Animated scrolling of page to top function inspired by the great tutorial at https://dzone.com/articles/back-to-top-pure-javascript and the MDN page about scrollBy() at https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollBy */
