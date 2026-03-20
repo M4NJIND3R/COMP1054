@@ -1,0 +1,60 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+/* Box-sizing reset (https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/) */
+html {
+	box-sizing: border-box;
+}
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+html {
+	font-family: "Open Sans", sans-serif;
+}
+#container {
+	width: 70%;
+	margin: 0 auto;
+}
+
+[role="tabpanel"]{
+	display: none;
+	border: 2px solid violet;
+	padding: 2rem;
+	margin: 0 auto;
+}
+
+[role="tab"] a{
+	text-decoration: none;
+	color: black;
+	font-weight: 600;
+	padding: 15px;
+}
+
+li[role="tab"]{
+	padding: 10px 0 10px 0;
+	border: 2px solid violet ;
+	list-style: none;
+	background-color: violet;
+	border-radius: 1rem 1rem 0 0 ;
+	bottom: -.12rem;
+}
+
+[role="tablist"]{
+	display: flex;
+	flex-direction: row;
+	gap: 2px;
+	margin: 0 auto;
+	padding: 0;
+}
+
+.active-tab{
+	position: relative;
+	z-index: 9;
+	background-color: white !important;
+	border-bottom: none !important;
+}
+
+.active-tabpanel{
+	display: block;
+}
