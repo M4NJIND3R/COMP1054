@@ -4,7 +4,7 @@ body{
     background-color: #1a1a1a;
 }
 
-/* Main Container properties*/
+/* main content Container, max width to fit table but collapsanble to allow auto scroll*/
 #container{
     background-color: #fff;
     padding: 50px;
@@ -17,17 +17,20 @@ body{
     font-size: 2.2rem;
 }
 
+/* allow scroll for each table when about to clip out of view */
 section {
     width: 100%;
-    max-width: 1400px;
+    max-width: 1600px;
     overflow-x: auto;
 }
 
+/* allow collapsable border */
 table{
     border-collapse: collapse;
     width: 100%;
 }
 
+/* caption moved to left */
 caption{
     text-align: left;
     padding-bottom: 20px;
@@ -35,38 +38,48 @@ caption{
     font-weight: 600;
 }
 
+/* add boder up and down. boder all collapse */
 tr, thead, tbody{
     border-top: 1px solid #e0e0e0;
     border-bottom: 1px solid #e0e0e0;
 }
 
-td, thead th{
-    padding: 5px;
+td, th{
+    padding: 10px 5px;
+    min-width: fit-content;
+    text-align: center;
 }
 
-colgroup:nth-child(2){
+td{
+    padding: 0 10px;
+}
+
+thead th{
+    user-select: none;
+}
+
+/* team name col with more room */
+colgroup:nth-child(2) col{
     min-width: 400px;
 }
 
 th[scope="row"] a{
     display: flex;
     font-weight: 600;
+    width: fit-content;
     text-decoration: none;
     align-items: center;
     color: black;
-    padding: 10px;
+    /* padding: 10px 0; */
 }
 
+/* dont change color on visited anchor tag */
 th[scope="row"] a:visited{
     color: black;
 }
 
 tbody tr:nth-child(even){
     background-color: #fafafa;
-}
-
-colgroup:nth-child(3) col{
-    min-width: 50px;
 }
 
 img{
