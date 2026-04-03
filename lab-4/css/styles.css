@@ -1,0 +1,74 @@
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #1a1a1a;
+}
+
+/* Main Container properties*/
+#container{
+    background-color: #fff;
+    padding: 50px;
+    margin: auto;
+    max-width: fit-content;
+}
+
+#container h1{
+    font-weight: 900;
+    font-size: 2.2rem;
+}
+
+section {
+    width: 100%;
+    max-width: 1400px;
+    overflow-x: auto;
+}
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+caption{
+    text-align: left;
+    padding-bottom: 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+tr, thead, tbody{
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+td, thead th{
+    padding: 5px;
+}
+
+colgroup:nth-child(2){
+    min-width: 400px;
+}
+
+th[scope="row"] a{
+    display: flex;
+    font-weight: 600;
+    text-decoration: none;
+    align-items: center;
+    color: black;
+    padding: 10px;
+}
+
+th[scope="row"] a:visited{
+    color: black;
+}
+
+tbody tr:nth-child(even){
+    background-color: #fafafa;
+}
+
+colgroup:nth-child(3) col{
+    min-width: 50px;
+}
+
+img{
+    width: 45px;
+}

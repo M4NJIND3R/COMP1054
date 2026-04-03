@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+
     <!-- Table sort Credit: https://github.com/tristen/tablesort -->
     <script src="./js/tablesort/src/tablesort.js" defer></script> 
     <script src="./js/script.js" defer></script>
@@ -13,60 +13,265 @@
     <link rel="stylesheet" href="./js/tablesort/tablesort.css">
 </head>
 <body>
-    <table>
-        <thead>
-            <tr>
-            <th>User ID</th>
-            <th>Employee Name</th>
-            <th>Department</th>
-            <th>Access Level</th>
-            <th>Last Login</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-            <td>USR-102</td>
-            <td>Beatrix Vance</td>
-            <td>Engineering</td>
-            <td>Admin</td>
-            <td>2026-03-28</td>
-            </tr>
-            <tr>
-            <td>USR-449</td>
-            <td>Silas Thorne</td>
-            <td>Marketing</td>
-            <td>Editor</td>
-            <td>2026-04-01</td>
-            </tr>
-            <tr>
-            <td>USR-012</td>
-            <td>Clara Oswald</td>
-            <td>Operations</td>
-            <td>Viewer</td>
-            <td>2026-03-15</td>
-            </tr>
-            <tr>
-            <td>USR-773</td>
-            <td>Dominic Toretto</td>
-            <td>Logistics</td>
-            <td>Admin</td>
-            <td>2026-04-03</td>
-            </tr>
-            <tr>
-            <td>USR-221</td>
-            <td>Fiona Gallagher</td>
-            <td>Human Resources</td>
-            <td>Editor</td>
-            <td>2026-03-30</td>
-            </tr>
-            <tr>
-            <td>USR-605</td>
-            <td>Arthur Dent</td>
-            <td>Research</td>
-            <td>Viewer</td>
-            <td>2026-02-12</td>
-            </tr>
-        </tbody>
-    </table>
+    <div id="container">
+        <header>
+            <h1>Standings</h1>
+        </header>
+        <main>
+            <section>
+                <h2>Eastern</h2>
+                <div>
+                    <table>
+                        <colgroup><col/></colgroup>
+                        <colgroup><col/></colgroup>
+                        <colgroup>
+                            <col/>
+                            <col/>
+                            <col/>
+                            <col/>
+                            <col/>
+                            <col/>
+                            <col/>
+                            <col/>
+                            <col/>
+                            <col/>
+                            <col/>
+                            <col/>
+                            <col/>
+                            <col/>
+                            <col/>
+                            <col/>
+                        </colgroup>
+                        <caption>Atlantic</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col" title="Rank">Rank</th>
+                                <th scope="col" title="Team">Team</th>
+                                <th scope="col" title="Games Played">GP</th>
+                                <th scope="col" title="Wins">W</th>
+                                <th scope="col" title="Losses">L</th>
+                                <th scope="col" title="Overtime Losses">OT</th>
+                                <th scope="col" title="Points">PTS</th>
+                                <th scope="col" title="Point %">P%</th>
+                                <th scope="col" title="Regulation Wins">RW</th>
+                                <th scope="col" title="Regulation plus Overtime Wins">ROW</th>
+                                <th scope="col" title="Goals For">GF</th>
+                                <th scope="col" title="Goals Against">GA</th>
+                                <th scope="col" title="Goal Differential">DIFF</th>
+                                <th scope="col" title="Home Record">Home</th>
+                                <th scope="col" title="Away Record">Away</th>
+                                <th scope="col" title="Shootout Record">S/O</th>
+                                <th scope="col" title="Last Ten Record">L10</th>
+                                <th scope="col" title="Streak">STRK</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <th scope="row">
+                                    <a href="https://www.nhl.com/lightning" target="_blank">
+                                        <img src="https://assets.nhle.com/logos/nhl/svg/TBL_light.svg" alt="Tampa Bay Lightning">
+                                        <span>Tampa Bay Lightning</span>
+                                    </a>
+                                </th>
+                                <td>75</td>
+                                <td>47</td>
+                                <td>22</td>
+                                <td>6</td>
+                                <td>100</td>
+                                <td>.667</td>
+                                <td>38</td>
+                                <td>43</td>
+                                <td>274</td>
+                                <td>210</td>
+                                <td>+64</td>
+                                <td>24-13-1</td>
+                                <td>23-9-5</td>
+                                <td>4-2</td>
+                                <td>7-1-2</td>
+                                <td>W1</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <th scope="row">
+                                    <a href="https://www.nhl.com/canadiens" target="_blank">
+                                        <img src="https://assets.nhle.com/logos/nhl/svg/MTL_light.svg" alt="Montréal Canadiens">
+                                        <span>Montréal Canadiens</span>
+                                    </a>
+                                </th>
+                                <td>75</td>
+                                <td>44</td>
+                                <td>21</td>
+                                <td>10</td>
+                                <td>98</td>
+                                <td>.653</td>
+                                <td>32</td>
+                                <td>42</td>
+                                <td>265</td>
+                                <td>236</td>
+                                <td>+29</td>
+                                <td>22-13-2</td>
+                                <td>22-8-8</td>
+                                <td>2-5</td>
+                                <td>8-2-0</td>
+                                <td>W7</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <th scope="row">
+                                    <a href="https://www.nhl.com/senators" target="_blank">
+                                        <img src="https://assets.nhle.com/logos/nhl/svg/OTT_light.svg" alt="Ottawa Senators">
+                                        <span>Ottawa Senators</span>
+                                    </a>
+                                </th>
+                                <td>75</td>
+                                <td>39</td>
+                                <td>26</td>
+                                <td>10</td>
+                                <td>88</td>
+                                <td>.587</td>
+                                <td>33</td>
+                                <td>36</td>
+                                <td>251</td>
+                                <td>231</td>
+                                <td>+20</td>
+                                <td>19-11-6</td>
+                                <td>20-15-4</td>
+                                <td>3-1</td>
+                                <td>6-3-1</td>
+                                <td>W1</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <th scope="row">
+                                    <a href="https://www.nhl.com/redwings" target="_blank">
+                                        <img src="https://assets.nhle.com/logos/nhl/svg/DET_light.svg" alt="Detroit Red Wings">
+                                        <span>Detroit Red Wings</span>
+                                    </a>
+                                </th>
+                                <td>75</td>
+                                <td>40</td>
+                                <td>27</td>
+                                <td>8</td>
+                                <td>88</td>
+                                <td>.587</td>
+                                <td>29</td>
+                                <td>38</td>
+                                <td>220</td>
+                                <td>225</td>
+                                <td>-5</td>
+                                <td>20-14-3</td>
+                                <td>20-13-5</td>
+                                <td>2-3</td>
+                                <td>4-5-1</td>
+                                <td>W1</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <th scope="row">
+                                    <a href="https://www.nhl.com/panthers" target="_blank">
+                                        <img src="https://assets.nhle.com/logos/nhl/svg/FLA_light.svg" alt="Florida Panthers">
+                                        <span>Florida Panthers</span>
+                                    </a>
+                                </th>
+                                <td>75</td>
+                                <td>37</td>
+                                <td>35</td>
+                                <td>3</td>
+                                <td>77</td>
+                                <td>.513</td>
+                                <td>29</td>
+                                <td>32</td>
+                                <td>224</td>
+                                <td>248</td>
+                                <td>-24</td>
+                                <td>21-15-3</td>
+                                <td>16-20-0</td>
+                                <td>5-1</td>
+                                <td>4-6-0</td>
+                                <td>W2</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <th scope="row">
+                                    <a href="https://www.nhl.com/sabres" target="_blank">
+                                        <img src="https://assets.nhle.com/logos/nhl/svg/BUF_light.svg" alt="Buffalo Sabres">
+                                        <span>Buffalo Sabres</span>
+                                    </a>
+                                </th>
+                                <td>76</td>
+                                <td>46</td>
+                                <td>22</td>
+                                <td>8</td>
+                                <td>100</td>
+                                <td>.658</td>
+                                <td>38</td>
+                                <td>41</td>
+                                <td>264</td>
+                                <td>225</td>
+                                <td>+39</td>
+                                <td>24-10-4</td>
+                                <td>22-12-4</td>
+                                <td>5-0</td>
+                                <td>6-2-2</td>
+                                <td>L1</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <th scope="row">
+                                    <a href="https://www.nhl.com/bruins" target="_blank">    
+                                        <img src="https://assets.nhle.com/logos/nhl/svg/BOS_light.svg" alt="Boston Bruins">
+                                        <span>Boston Bruins</span>
+                                    </a>
+                                </th>
+                                <td>76</td>
+                                <td>43</td>
+                                <td>25</td>
+                                <td>8</td>
+                                <td>94</td>
+                                <td>.618</td>
+                                <td>31</td>
+                                <td>39</td>
+                                <td>257</td>
+                                <td>235</td>
+                                <td>+22</td>
+                                <td>28-10-1</td>
+                                <td>15-15-7</td>
+                                <td>4-3</td>
+                                <td>6-2-2</td>
+                                <td>L1</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <th scope="row">
+                                    <a href="https://www.nhl.com/mapleleafs" target="_blank">
+                                        <img src="https://assets.nhle.com/logos/nhl/svg/TOR_light.svg" alt="Toronto Maple Leafs">
+                                        <span>Toronto Maple Leafs e</span>
+                                    </a>
+                                </th>
+                                <td>76</td>
+                                <td>32</td>
+                                <td>31</td>
+                                <td>13</td>
+                                <td>77</td>
+                                <td>.507</td>
+                                <td>23</td>
+                                <td>31</td>
+                                <td>236</td>
+                                <td>268</td>
+                                <td>-32</td>
+                                <td>18-12-8</td>
+                                <td>14-19-5</td>
+                                <td>1-4</td>
+                                <td>4-4-2</td>
+                                <td>L1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+    </div>
 </body>
 </html>
