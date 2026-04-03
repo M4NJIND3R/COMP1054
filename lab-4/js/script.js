@@ -30,8 +30,11 @@ const tableHeaders = document.querySelectorAll("thead th");
 
 
 tableHeaders.forEach((element, index) => {
-    element.addEventListener('click', event =>{
-        sortColBgColorChange(index)
-    })
+    if (!element.matches("[data-sort-method='none']")){
+        element.addEventListener('click', event =>{
+            sortColBgColorChange(index)
+        })
+    }
+    
 });
 
