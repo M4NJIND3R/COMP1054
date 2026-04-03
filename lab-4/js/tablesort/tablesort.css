@@ -14,7 +14,7 @@ th[role=columnheader]:not([data-sort-method='none']):after, th[role=columnheader
 	margin-top: 7px;
 	border-width: 0 4px 4px;
 	border-style: solid;
-	border-color: #404040 transparent;
+	border-color: #0055e9 transparent;
 	visibility: hidden;
 	opacity: 0;
 	-ms-user-select: none;
