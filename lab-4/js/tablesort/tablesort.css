@@ -2,9 +2,15 @@ th[role=columnheader]:not([data-sort-method='none']) {
 	cursor: pointer;
 }
 
-th[role=columnheader]:not([data-sort-method='none']):after {
+th[role=columnheader]:not([data-sort-method='none'])::after{
+	position: relative;
+	margin: auto;
+}
+
+
+th[role=columnheader]:not([data-sort-method='none']):after, th[role=columnheader]:not([data-sort-method='none'])::before {
 	content: '';
-	float: right;
+	/* float: right; */
 	margin-top: 7px;
 	border-width: 0 4px 4px;
 	border-style: solid;
