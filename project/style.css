@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Geostar&family=ZCOOL+KuaiLe&display=swap');
+
+.zcool-kuaile-regular {
+  font-family: "ZCOOL KuaiLe", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.geostar-regular {
+  font-family: "Geostar", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+html {
+    box-sizing: border-box;
+
+    font-family: "ZCOOL KuaiLe", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+*,*::before,*::after{
+    box-sizing: inherit;
+    border: 1px dashed #dddddd;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Geostar", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.skip-link {
+    padding: 20px;
+    position: absolute;
+    top: -200px;
+    left: 0;
+}
+
+.skip-link:focus,.skip-link:active{
+    top: 0;
+    left: 0;
+}
+
+a svg{
+    width: 20px;
+}
+
+header .container { 
+    
+}
