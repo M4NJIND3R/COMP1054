@@ -35,6 +35,10 @@ html {
 *,*::before,*::after{
     box-sizing: inherit;
 }
+body {
+    background: linear-gradient(180deg, #05070a 0%, #0b0e14 100%) ;
+    color: #F0F4FF;
+}
 /* Default heading styles */
 h2, h3, h4, h5, h6 {
     font-family: "Geostar", serif;
@@ -159,10 +163,29 @@ main{
     font-size: 1.2rem;
     line-height: 1.5;
 }
-body {
-    /* background-color: #020205; */
-    background: linear-gradient(180deg, #05070a 0%, #0b0e14 100%) ;
-    color: #F0F4FF;
+section.container ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    justify-content: center;
+    align-items: center;
+
+    list-style: none;
+}
+section.container ul li{
+    background: rgb(230, 0, 122, 0.6);
+    box-shadow: 0 0 6px rgb(230, 0, 122);
+    color: #000;
+
+    padding: 5px;
+    margin: 1px;
+
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+    font-size: 18px;
 }
 article {
     margin: auto;
