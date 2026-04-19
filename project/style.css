@@ -1,52 +1,471 @@
 @import url('https://fonts.googleapis.com/css2?family=Geostar&family=ZCOOL+KuaiLe&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Boldonse&display=swap');
 
+/* source: https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Animations/Using */
+@keyframes fadeInBackground {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+/* FONT use examples */
 .zcool-kuaile-regular {
-  font-family: "ZCOOL KuaiLe", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.geostar-regular {
-  font-family: "Geostar", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-html {
-    box-sizing: border-box;
-
     font-family: "ZCOOL KuaiLe", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
-
+.geostar-regular {
+    font-family: "Geostar", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.boldonse-regular {
+  font-family: "Boldonse", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+/* Border box fix */
+html {
+    box-sizing: border-box;
+    
+    scroll-behavior: smooth;
+    
+    font-family: "ZCOOL KuaiLe", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
 *,*::before,*::after{
     box-sizing: inherit;
-    border: 1px dashed #dddddd;
 }
-
-h1, h2, h3, h4, h5, h6 {
+/* Default heading styles */
+h2, h3, h4, h5, h6 {
     font-family: "Geostar", serif;
     font-weight: 600;
     font-style: normal;
-}
+    margin: 0;
 
+    color: #E6007A;
+}
+/* Skip to main */
 .skip-link {
     padding: 20px;
     position: absolute;
     top: -200px;
     left: 0;
 }
-
 .skip-link:focus,.skip-link:active{
     top: 0;
     left: 0;
 }
+/* Git hub links */
+.link-github{
+    display: flex;
+    align-items: center;
 
-a svg{
+    gap: 5px;
+}
+svg {
     width: 20px;
+    height: 14px;
+    fill: currentColor;
+}
+/* Header */
+header .container { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    outline: 2px dashed rgba(79, 209, 197, 1);
+    padding: 40px 0;
+}
+header h1{
+    font-family: "Boldonse", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 10rem;
+    margin: 0;
+    
+    background-image: url('./img/GSFC_20171208_Archive_e002076~orig.jpg');
+
+    background-size: cover;
+    background-position: center;
+    
+
+    -webkit-background-clip: text;  /* for Chrome/Safari/Edge */
+    background-clip: text;
+
+    color: transparent;
+    animation: fadeInBackground 8s ease-in forwards;
+}
+/* Nav */
+nav{
+    margin: 30px;
+    width: fit-content;
+
+    margin: 20px auto 0 auto;
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    list-style: none;
+
+    margin: 0;
+    padding: 20px 0;
+    gap: 20px;
+}
+nav a {
+    display: inline-block;
+    
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.05);
+
+    outline: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    transition: all 0.4s ease;
+}
+/* Dim others on hover */
+nav ul:hover li a {
+    opacity: 0.4;
+    filter: blur(1px);
+
+}
+nav ul li a:hover, nav ul li a:focus {
+    opacity: 1;
+    filter: blur(0);
+    color: #00f2ff;
+    outline-color: #00f2ff;
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.6);
+
+    transform: translateY(-5px) scale(1.4);
+    z-index: 10;
+    
+    background-image: url('./img/carina_nebula~orig.png');
+    background-size: cover;
+    background-position: center;
+}
+/* Main */
+main{
+    max-width: 1000px;
+
+    margin: 0px auto;
+    padding: 0px 50px;
+
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+body {
+    /* background-color: #020205; */
+    background: linear-gradient(180deg, #05070a 0%, #0b0e14 100%) ;
+    color: #F0F4FF;
+}
+article {
+    margin: auto;
+    padding: 40px;
+
+    display: none;
+}
+article:target,
+#files:target {
+    display: block;
+    position: relative;
+    background: transparent;
+    
+    clip-path: fill-box; 
+}
+#about:target::before{
+    background-image: url('./img/pia26748-spherex-cygnus-h2o-ice.jpg');
+    background-size: 70%; 
+}
+#guidelines:target::before{
+    background-image: url('./img//GSFC_20171208_Archive_e001925~orig.jpg');
+    background-size: 70%; 
+}
+#contribute:target::before{
+    background-image: url('./img//GSFC_20171208_Archive_e000383~orig.jpg');
+    background-size: 70%; 
+}
+#files:target::before{
+    background-image: url('./img//art002e009282~orig.jpg');
+    background-size: 80%; 
+}
+article:target::before,
+#files:target::before {
+    content: "";
+    
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+
+    min-width: 800px;
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    z-index: -1; 
+
+    border-radius: 40px;
+    
+    /* Source: https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Animations/Using */
+    opacity: 0;
+    
+    animation: fadeInBackground 5s ease-in forwards;
+}
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has */
+article:has(:target){
+    display: block;
+}
+article section {
+    background: rgba(0, 0, 0, 0.4); 
+    margin: 40px; 
+    padding: 20px;
+    border-radius: 15px;
+}
+#files div{
+    padding: 20px;
+    margin: 40px;
+}
+a{
+    color: #00F2FF;
+}
+article:target > footer{
+    display: none;
+}
+article:has(#files:target) > section{
+    display: none;
+}
+#files > .container  {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    justify-content: space-evenly;
+}
+#files > .container > h3{
+    flex-basis: 100%;
+    text-align: center;
+
+    font-size: 2rem;
+}
+#files > .container > a {
+    text-decoration: none;
+    
+    padding: 12px 25px;
+    margin: 10px;
+
+    background: rgba(255, 255, 255, 0.05); 
+    backdrop-filter: blur(4px); 
+    
+    border: 1px dashed rgba(0, 242, 255, 0.4);
+    border-radius: 50px;
+    
+    transition: all 0.4s ease;
+
+    align-items: center;
+    justify-content: center;
+}
+#files > .container > a:hover, #files > .container > a:focus {
+    background: rgba(0, 242, 255, 0.15);
+    outline: 1px solid #00f2ff;
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.5), inset 0 0 10px rgba(0, 242, 255, 0.2);
+    color: #00f2ff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+/* aside */
+aside .container{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    border: 2px dashed rgba(79, 209, 197, 1);
+    border-collapse: collapse;
+    padding: 40px 0;
+    margin: 40px 0;
+
+    line-height: 1.5;
+}
+aside .container h2,
+aside .container h4{
+    font-size: 1.5rem;
+}
+#styles .container {
+    padding: 40px;
+    text-align: center;
+}
+.features {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.features li {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    min-height: 100px;
+}
+.features li a {
+    display: block;
+    font-family: "Geostar", serif;
+    
+    color: #00f2ff;
+    font-size: 1.2rem;
+    text-decoration: none;
+
+    max-width: 260px;
+    margin-bottom: 5px;
+
+    transition: 0.3s;
+}
+.features li span span {
+    color: #a0aec0;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.features li:hover {
+    background: rgba(0, 242, 255, 0.05);
+    border-color: #00f2ff;
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+}
+.features li:hover a {
+    text-shadow: 0 0 10px #00f2ff;
+}
+.link-allstyles {
+    padding: 15px 40px;
+    color: #fff;
+    text-decoration: none;
+
+    text-transform: uppercase;
+    letter-spacing: 3px;
+
+    background: transparent;
+    border: 2px solid #e6007a;
+    border-radius: 4px;
+
+    transition: all 0.3s ease;
+}
+.link-allstyles:hover {
+    background: #e6007a;
+    box-shadow: 0 0 30px #e6007a;
+    color: #000;
+    transform: translateY(-3px);
+}
+/* footer */
+.page-footer {
+    background: rgba(0, 0, 0, .8);
+    border-top: 1px solid #333;
+    padding: 60px 20px;
+    color: #a0aec0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+.page-footer .container {
+    margin: 0 auto;
+    text-align: center;
+}
+.page-footer ul {
+    list-style: none;
+    padding: 20px 0;
+
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 30px;
+}
+.page-footer ul li a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    text-decoration: none;
+    color: #00f2ff;
+    font-size: 0.8rem;
+
+    padding: 8px 16px;
+
+    border: 1px solid rgba(0, 242, 255, 0.2);
+    border-radius: 2px;
+
+    transition: all 0.3s ease;
+}
+.page-footer ul li a:hover {
+    background: rgba(0, 242, 255, 0.1);
+    border-color: #00f2ff;
+
+    box-shadow: 0 0 10px rgba(0, 242, 255, 0.3);
+
+    transform: translateY(-2px);
+}
+.page-footer p {
+    margin: 15px 0;
+    max-width: 700px;
+    margin: auto;
+}
+.page-footer p strong {
+    color: #fff;
+}
+.page-footer p a {
+    color: #e6007a;
+
+    text-decoration: none;
+    
+    border-bottom: 1px dotted transparent;
+    transition: border 0.3s;
+}
+.page-footer p a:hover {
+    border-bottom-color: #e6007a;
 }
 
-header .container { 
-    
+@media screen and (max-width: 800px) {
+    header > div > h1 {
+        font-size: 5rem ;
+    }
+    h2,h3,h4,h5{
+        font-size: 1.2rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+    main{
+        padding: 0;
+    }
+    main article {
+        padding-left: 0 ;
+        padding-right: 0 ;
+    }
+    .features{
+        transform: scale(.8);
+        padding-left: 0 ;
+        padding-right: 0 ;
+    }
+}
+@media screen and (max-width: 1300px) {
+    #about:target::before{
+        background-size: 100%;
+    }
+    #guidelines:target::before{
+        background-size: 100%;
+    }
+    #contribute:target::before{
+        background-size: 100%;
+    }
 }
